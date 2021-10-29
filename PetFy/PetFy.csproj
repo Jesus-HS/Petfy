@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,6 +53,7 @@
     <Reference Include="MySql.Data, Version=8.0.26.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.26\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -95,6 +98,12 @@
     <Compile Include="AgregarAnimal.Designer.cs">
       <DependentUpon>AgregarAnimal.cs</DependentUpon>
     </Compile>
+    <Compile Include="agregarPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="agregarPersonal.Designer.cs">
+      <DependentUpon>agregarPersonal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Animal.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -108,16 +117,19 @@
     <Compile Include="Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestorAnimales.cs">
+    <Compile Include="Gestor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GestorAnimales.Designer.cs">
-      <DependentUpon>GestorAnimales.cs</DependentUpon>
+    <Compile Include="Gestor.Designer.cs">
+      <DependentUpon>Gestor.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AgregarAnimal.resx">
       <DependentUpon>AgregarAnimal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="agregarPersonal.resx">
+      <DependentUpon>agregarPersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Animal.resx">
       <DependentUpon>Animal.cs</DependentUpon>
@@ -125,8 +137,8 @@
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestorAnimales.resx">
-      <DependentUpon>GestorAnimales.cs</DependentUpon>
+    <EmbeddedResource Include="Gestor.resx">
+      <DependentUpon>Gestor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -154,6 +166,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ppPerro.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ppDoge.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

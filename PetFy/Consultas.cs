@@ -20,10 +20,11 @@ namespace PetFy
         {
             try
             {
-                cn = new MySqlConnection("server=sql10.freesqldatabase.com;" +
-                                         "database=sql10441351;" +
-                                         "Uid=sql10441351;" +
-                                         "pwd=BFHtZSlWf5; ");
+                cn = new MySqlConnection("server=127.0.0.1;" +
+                                         "database=petfy;" +
+                                         "userid=root;" +
+                                         "password=;" +
+                                         "SSL Mode=None");
             }
             catch (Exception ex)
             {

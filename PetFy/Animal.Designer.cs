@@ -30,50 +30,43 @@ namespace PetFy
         private void InitializeComponent()
         {
             this.pbAnimal = new System.Windows.Forms.PictureBox();
-            this.lblId = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblSexo = new System.Windows.Forms.Label();
             this.lblTipo = new System.Windows.Forms.Label();
             this.lblRaza = new System.Windows.Forms.Label();
             this.lblTituloFecha = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
-            this.lblEditar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbAnimal)).BeginInit();
             this.SuspendLayout();
             // 
             // pbAnimal
             // 
-            this.pbAnimal.Image = global::PetFy.Properties.Resources.ppPerro;
+            this.pbAnimal.Image = global::PetFy.Properties.Resources.ppDoge;
             this.pbAnimal.Location = new System.Drawing.Point(14, 12);
             this.pbAnimal.Name = "pbAnimal";
-            this.pbAnimal.Size = new System.Drawing.Size(150, 150);
+            this.pbAnimal.Size = new System.Drawing.Size(91, 92);
             this.pbAnimal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbAnimal.TabIndex = 0;
             this.pbAnimal.TabStop = false;
-            // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(191, 30);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(30, 13);
-            this.lblId.TabIndex = 1;
-            this.lblId.Text = "ID: 0";
+            this.pbAnimal.Paint += new System.Windows.Forms.PaintEventHandler(this.pbAnimal_Paint);
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(191, 59);
+            this.lblNombre.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.lblNombre.Location = new System.Drawing.Point(19, 115);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(85, 13);
+            this.lblNombre.Size = new System.Drawing.Size(86, 25);
             this.lblNombre.TabIndex = 2;
-            this.lblNombre.Text = "Nombre: nombre";
+            this.lblNombre.Text = "Nombre";
             // 
             // lblSexo
             // 
             this.lblSexo.AutoSize = true;
-            this.lblSexo.Location = new System.Drawing.Point(191, 88);
+            this.lblSexo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblSexo.Location = new System.Drawing.Point(21, 170);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(59, 13);
             this.lblSexo.TabIndex = 3;
@@ -82,7 +75,8 @@ namespace PetFy
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(191, 117);
+            this.lblTipo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblTipo.Location = new System.Drawing.Point(21, 196);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(51, 13);
             this.lblTipo.TabIndex = 4;
@@ -91,7 +85,8 @@ namespace PetFy
             // lblRaza
             // 
             this.lblRaza.AutoSize = true;
-            this.lblRaza.Location = new System.Drawing.Point(369, 30);
+            this.lblRaza.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblRaza.Location = new System.Drawing.Point(21, 146);
             this.lblRaza.Name = "lblRaza";
             this.lblRaza.Size = new System.Drawing.Size(58, 13);
             this.lblRaza.TabIndex = 5;
@@ -100,7 +95,8 @@ namespace PetFy
             // lblTituloFecha
             // 
             this.lblTituloFecha.AutoSize = true;
-            this.lblTituloFecha.Location = new System.Drawing.Point(369, 59);
+            this.lblTituloFecha.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblTituloFecha.Location = new System.Drawing.Point(21, 216);
             this.lblTituloFecha.Name = "lblTituloFecha";
             this.lblTituloFecha.Size = new System.Drawing.Size(94, 13);
             this.lblTituloFecha.TabIndex = 6;
@@ -109,46 +105,39 @@ namespace PetFy
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(369, 75);
+            this.lblFecha.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblFecha.Location = new System.Drawing.Point(22, 235);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(84, 13);
+            this.lblFecha.Size = new System.Drawing.Size(53, 13);
             this.lblFecha.TabIndex = 7;
-            this.lblFecha.Text = "00 de Mes 0000";
+            this.lblFecha.Text = "01/01/21";
             // 
-            // lblEditar
+            // label1
             // 
-            this.lblEditar.Location = new System.Drawing.Point(352, 139);
-            this.lblEditar.Name = "lblEditar";
-            this.lblEditar.Size = new System.Drawing.Size(75, 23);
-            this.lblEditar.TabIndex = 8;
-            this.lblEditar.Text = "Editar";
-            this.lblEditar.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(434, 139);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 9;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label1.Location = new System.Drawing.Point(22, 258);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Historial Clinico";
             // 
             // Animal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.lblEditar);
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblTituloFecha);
             this.Controls.Add(this.lblRaza);
             this.Controls.Add(this.lblTipo);
             this.Controls.Add(this.lblSexo);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.lblId);
             this.Controls.Add(this.pbAnimal);
             this.Name = "Animal";
-            this.Size = new System.Drawing.Size(519, 175);
+            this.Size = new System.Drawing.Size(171, 294);
             ((System.ComponentModel.ISupportInitialize)(this.pbAnimal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -158,14 +147,12 @@ namespace PetFy
         #endregion
 
         private System.Windows.Forms.PictureBox pbAnimal;
-        private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblSexo;
         private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.Label lblRaza;
         private System.Windows.Forms.Label lblTituloFecha;
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.Button lblEditar;
-        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Label label1;
     }
 }
