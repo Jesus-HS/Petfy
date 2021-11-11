@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace PetFy.Modulo_Historial_Clinico
+{
+    public partial class frmAgregarHistorialClinico : Form
+    {
+        public frmAgregarHistorialClinico()
+        {
+            InitializeComponent();
+        }
+    }
+}

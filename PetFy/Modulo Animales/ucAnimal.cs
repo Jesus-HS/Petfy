@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace PetFy
 {
-    public partial class Animal : UserControl
+    public partial class ucAnimal : UserControl
     {
-        public Animal()
+        public ucAnimal()
         {
             InitializeComponent();
         }

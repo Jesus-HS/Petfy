@@ -1,7 +1,7 @@
 ﻿
 namespace PetFy
 {
-    partial class Animal
+    partial class ucAnimal
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -36,7 +36,6 @@ namespace PetFy
             this.lblRaza = new System.Windows.Forms.Label();
             this.lblTituloFecha = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbAnimal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,23 +111,11 @@ namespace PetFy
             this.lblFecha.TabIndex = 7;
             this.lblFecha.Text = "01/01/21";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(22, 258);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Historial Clinico";
-            // 
-            // Animal
+            // ucAnimal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblTituloFecha);
             this.Controls.Add(this.lblRaza);
@@ -136,8 +123,8 @@ namespace PetFy
             this.Controls.Add(this.lblSexo);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.pbAnimal);
-            this.Name = "Animal";
-            this.Size = new System.Drawing.Size(171, 294);
+            this.Name = "ucAnimal";
+            this.Size = new System.Drawing.Size(171, 274);
             ((System.ComponentModel.ISupportInitialize)(this.pbAnimal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -146,13 +133,12 @@ namespace PetFy
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pbAnimal;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblSexo;
-        private System.Windows.Forms.Label lblTipo;
-        private System.Windows.Forms.Label lblRaza;
-        private System.Windows.Forms.Label lblTituloFecha;
-        private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.PictureBox pbAnimal;
+        public System.Windows.Forms.Label lblNombre;
+        public System.Windows.Forms.Label lblSexo;
+        public System.Windows.Forms.Label lblTipo;
+        public System.Windows.Forms.Label lblRaza;
+        public System.Windows.Forms.Label lblTituloFecha;
+        public System.Windows.Forms.Label lblFecha;
     }
 }

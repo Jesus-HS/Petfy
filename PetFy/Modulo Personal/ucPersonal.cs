@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PetFy
+namespace PetFy.Modulo_Personal
 {
-    public partial class frmAgregarAnimal : Form
+    public partial class ucPersonal : UserControl
     {
-        public frmAgregarAnimal()
+        public ucPersonal()
         {
             InitializeComponent();
         }

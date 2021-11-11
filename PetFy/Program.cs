@@ -16,7 +16,7 @@ namespace PetFy
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAgregarPersonal());
+            Application.Run(new frmGestor());
         }
     }
 }

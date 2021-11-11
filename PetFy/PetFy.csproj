@@ -92,30 +92,42 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgregarAnimal.cs">
+    <Compile Include="Modulo Almacen\AgregarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarAnimal.Designer.cs">
+    <Compile Include="Modulo Almacen\AgregarProducto.Designer.cs">
+      <DependentUpon>AgregarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Personal\frmAgregarPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Personal\frmAgregarPersonal.Designer.cs">
+      <DependentUpon>frmAgregarPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Usuarios\Agregar Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Usuarios\Agregar Usuario.Designer.cs">
+      <DependentUpon>Agregar Usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Animales\AgregarAnimal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Animales\AgregarAnimal.Designer.cs">
       <DependentUpon>AgregarAnimal.cs</DependentUpon>
     </Compile>
-    <Compile Include="agregarPersonal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="agregarPersonal.Designer.cs">
-      <DependentUpon>agregarPersonal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Animal.cs">
+    <Compile Include="Modulo Animales\ucAnimal.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Animal.Designer.cs">
-      <DependentUpon>Animal.cs</DependentUpon>
+    <Compile Include="Modulo Animales\ucAnimal.Designer.cs">
+      <DependentUpon>ucAnimal.cs</DependentUpon>
     </Compile>
     <Compile Include="Consultas.cs" />
-    <Compile Include="Inicio.cs">
+    <Compile Include="Inicio de sesión.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inicio.Designer.cs">
-      <DependentUpon>Inicio.cs</DependentUpon>
+    <Compile Include="Inicio de sesión.Designer.cs">
+      <DependentUpon>Inicio de sesión.cs</DependentUpon>
     </Compile>
     <Compile Include="Gestor.cs">
       <SubType>Form</SubType>
@@ -123,22 +135,64 @@
     <Compile Include="Gestor.Designer.cs">
       <DependentUpon>Gestor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulo Historial Clinico\AgregarHistorialClinico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Historial Clinico\AgregarHistorialClinico.Designer.cs">
+      <DependentUpon>AgregarHistorialClinico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Personal\ucPersonal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulo Personal\ucPersonal.Designer.cs">
+      <DependentUpon>ucPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Usuarios\ucUsuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulo Usuarios\ucUsuario.Designer.cs">
+      <DependentUpon>ucUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AgregarAnimal.resx">
+    <Compile Include="Modulo Almacen\ucProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulo Almacen\ucProducto.Designer.cs">
+      <DependentUpon>ucProducto.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Modulo Almacen\AgregarProducto.resx">
+      <DependentUpon>AgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Almacen\ucProducto.resx">
+      <DependentUpon>ucProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Personal\frmAgregarPersonal.resx">
+      <DependentUpon>frmAgregarPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Usuarios\Agregar Usuario.resx">
+      <DependentUpon>Agregar Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Animales\AgregarAnimal.resx">
       <DependentUpon>AgregarAnimal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="agregarPersonal.resx">
-      <DependentUpon>agregarPersonal.cs</DependentUpon>
+    <EmbeddedResource Include="Modulo Animales\ucAnimal.resx">
+      <DependentUpon>ucAnimal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Animal.resx">
-      <DependentUpon>Animal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Inicio.resx">
-      <DependentUpon>Inicio.cs</DependentUpon>
+    <EmbeddedResource Include="Inicio de sesión.resx">
+      <DependentUpon>Inicio de sesión.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gestor.resx">
       <DependentUpon>Gestor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Historial Clinico\AgregarHistorialClinico.resx">
+      <DependentUpon>AgregarHistorialClinico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Personal\ucPersonal.resx">
+      <DependentUpon>ucPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Usuarios\ucUsuario.resx">
+      <DependentUpon>ucUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -169,6 +223,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ppDoge.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pdf.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fondo.png" />

@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace PetFy
 {
     public class Consultas
     {
 
-        public MySqlConnection cn = new MySqlConnection();
-        public MySqlCommand cmd = new MySqlCommand();
+        public SqlConnection cn = new SqlConnection();
+        public SqlCommand cmd = new SqlCommand();
         private DataTable dt;
-        private MySqlDataAdapter da;
+        private SqlDataAdapter da;
 
         /// <summary> 
         /// Realiza una conexion a la tabla
@@ -19,12 +19,11 @@ namespace PetFy
         public Consultas()
         {
             try
-            {
-                cn = new MySqlConnection("server=127.0.0.1;" +
-                                         "database=petfy;" +
-                                         "userid=root;" +
-                                         "password=;" +
-                                         "SSL Mode=None");
+            {//bkdoyaci_petfy Petfy123
+                cn = new SqlConnection("Data Source=PetfyDB.mssql.somee.com; " +
+                    "Initial Catalog=PetfyDB; " +
+                    "User ID=Petfy_SQLLogin_1;" +
+                    "Password=6wzp3brymh;");
             }
             catch (Exception ex)
             {
@@ -40,7 +39,7 @@ namespace PetFy
             try
             {
                 cn.Open();
-                cmd = new MySqlCommand(consulta, cn);
+                cmd = new SqlCommand(consulta, cn);
                 cmd.ExecuteNonQuery();
                 cn.Close();
             }
@@ -59,8 +58,8 @@ namespace PetFy
             try
             {
                 cn.Open();
-                cmd = new MySqlCommand(consulta, cn);
-                da = new MySqlDataAdapter(cmd);
+                cmd = new SqlCommand(consulta, cn);
+                da = new SqlDataAdapter(cmd);
                 dt = new DataTable();
                 da.Fill(dt);
                 cn.Close();
