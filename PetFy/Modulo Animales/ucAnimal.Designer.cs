@@ -123,8 +123,10 @@ namespace PetFy
             this.Controls.Add(this.lblSexo);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.pbAnimal);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "ucAnimal";
             this.Size = new System.Drawing.Size(171, 274);
+            this.Click += new System.EventHandler(this.ucAnimal_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pbAnimal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

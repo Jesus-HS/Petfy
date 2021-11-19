@@ -12,7 +12,9 @@ namespace PetFy
 {
     public partial class frmGestor : Form
     {
+        static public string idElemento = String.Empty;
         Consultas consulta = new Consultas();
+        DataTable dt;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -214,6 +216,90 @@ namespace PetFy
 
                 //Agregar el control (comentario)
                 flpGestor.Controls.Add(ucusuario);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea eliminar el elemento? id" + idElemento, "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                MessageBox.Show("se elimino");
+            else
+                MessageBox.Show("No se elimino");
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            frmAgregarAnimal frm = new frmAgregarAnimal();
+            frm.cmdAgregar.Text = "Modificar";
+            switch (lblTitulo.Text)
+            {
+                case "Gestor de Animales":
+                    
+                    dt = consulta.obtenerTabla("SELECT idAnimal, nombreAnimal,caracteristicas,generoAnimal,fechaAnimal, razas.nombreRaza, tipos.nombreTipo, fotoAnimal FROM animales JOIN Razas ON razas.idRaza = animales.idRaza JOIN tipos ON tipos.idTipo = animales.idTipo WHERE idAnimal = '" + idElemento + "'");
+                    frm.txtNombre.Text = dt.Rows[0]["nombreAnimal"].ToString();
+                    frm.cbTipo.Text = dt.Rows[0]["nombreTipo"].ToString();
+                    frm.cbRaza.Text = dt.Rows[0]["nombreRaza"].ToString();
+                    if (dt.Rows[0]["generoAnimal"].ToString() == "1")
+                        frm.rbMacho.Checked = true;
+                    else
+                        frm.rbHembra.Checked = true;
+
+                    frm.rtCaracteristicas.Text = dt.Rows[0]["caracteristicas"].ToString();
+                    byte[] MisDatos = (byte[])dt.Rows[0]["fotoAnimal"];
+                    MemoryStream ms = new MemoryStream(MisDatos);
+                    //Asignamos la fotografia
+                    frm.pbFoto.Image = Image.FromStream(ms);
+                    frm.Show();
+                    break;
+
+                case "Gestor del Historial Clinico":
+                    break;
+
+                case "Gestor de Personal":
+                    frmAgregarPersonal frmAgregarPersonal = new frmAgregarPersonal();
+                    frmAgregarPersonal.ShowDialog();
+                    break;
+
+                case "Gestor de Almacen":
+                    frmAgregarProducto frmAgregarProducto = new frmAgregarProducto();
+                    frmAgregarProducto.ShowDialog();
+                    break;
+
+                case "Gestor de Adopciones":
+                    break;
+
+                case "Gestor de Usuarios":
+                    frmAgregarusuario frmAgregarusuario = new frmAgregarusuario();
+                    frmAgregarusuario.ShowDialog();
+                    break;
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            switch (lblTitulo.Text)
+            {
+                case "Gestor de Animales":
+
+                    break;
+
+                case "Gestor del Historial Clinico":
+                    break;
+
+                case "Gestor de Personal":
+                    
+                    break;
+
+                case "Gestor de Almacen":
+                    
+                    break;
+
+                case "Gestor de Adopciones":
+                    break;
+
+                case "Gestor de Usuarios":
+                    
+                    break;
             }
         }
     }

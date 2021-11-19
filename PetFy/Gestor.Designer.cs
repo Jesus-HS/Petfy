@@ -32,8 +32,8 @@ namespace PetFy
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestor));
             this.flpGestor = new System.Windows.Forms.FlowLayoutPanel();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnGestorAnimales = new System.Windows.Forms.Button();
             this.btnGestorHistorialClinico = new System.Windows.Forms.Button();
@@ -41,8 +41,10 @@ namespace PetFy
             this.btnGestorAlmacen = new System.Windows.Forms.Button();
             this.btnGestorAdopciones = new System.Windows.Forms.Button();
             this.btnGestorUsuarios = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.panelInteraccion = new System.Windows.Forms.Panel();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.panelInteraccion.SuspendLayout();
             this.SuspendLayout();
             // 
             // flpGestor
@@ -56,27 +58,32 @@ namespace PetFy
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(373, 9);
+            this.lblTitulo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTitulo.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblTitulo.Location = new System.Drawing.Point(352, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(87, 13);
+            this.lblTitulo.Size = new System.Drawing.Size(120, 17);
             this.lblTitulo.TabIndex = 3;
             this.lblTitulo.Text = "Titulo del modulo";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // txtBuscar
             // 
-            this.textBox1.Location = new System.Drawing.Point(288, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(272, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtBuscar.Location = new System.Drawing.Point(288, 45);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(272, 20);
+            this.txtBuscar.TabIndex = 4;
             // 
-            // button4
+            // btnBuscar
             // 
-            this.button4.Location = new System.Drawing.Point(566, 43);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Buscar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnBuscar.Location = new System.Drawing.Point(566, 43);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 5;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnAgregar
             // 
@@ -148,30 +155,52 @@ namespace PetFy
             this.btnGestorUsuarios.UseVisualStyleBackColor = true;
             this.btnGestorUsuarios.Click += new System.EventHandler(this.btnRegistrousuarios_Click);
             // 
-            // panel1
+            // panelInteraccion
             // 
-            this.panel1.Controls.Add(this.btnAgregar);
-            this.panel1.Location = new System.Drawing.Point(774, 72);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(46, 517);
-            this.panel1.TabIndex = 0;
+            this.panelInteraccion.Controls.Add(this.btnModificar);
+            this.panelInteraccion.Controls.Add(this.btnEliminar);
+            this.panelInteraccion.Controls.Add(this.btnAgregar);
+            this.panelInteraccion.Location = new System.Drawing.Point(774, 72);
+            this.panelInteraccion.Name = "panelInteraccion";
+            this.panelInteraccion.Size = new System.Drawing.Size(46, 517);
+            this.panelInteraccion.TabIndex = 0;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(3, 356);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(40, 40);
+            this.btnModificar.TabIndex = 8;
+            this.btnModificar.Text = "e";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(3, 402);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(40, 40);
+            this.btnEliminar.TabIndex = 7;
+            this.btnEliminar.Text = "-";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // frmGestor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(842, 640);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelInteraccion);
             this.Controls.Add(this.btnGestorUsuarios);
             this.Controls.Add(this.btnGestorAdopciones);
             this.Controls.Add(this.btnGestorAlmacen);
             this.Controls.Add(this.btnGestorPersonal);
             this.Controls.Add(this.btnGestorHistorialClinico);
             this.Controls.Add(this.btnGestorAnimales);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.flpGestor);
             this.DoubleBuffered = true;
@@ -179,7 +208,7 @@ namespace PetFy
             this.Name = "frmGestor";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(255)))), ((int)(((byte)(9)))));
             this.Load += new System.EventHandler(this.frmGestor_Load);
-            this.panel1.ResumeLayout(false);
+            this.panelInteraccion.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,8 +217,8 @@ namespace PetFy
         #endregion
         private System.Windows.Forms.FlowLayoutPanel flpGestor;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnGestorAnimales;
         private System.Windows.Forms.Button btnGestorHistorialClinico;
@@ -197,6 +226,8 @@ namespace PetFy
         private System.Windows.Forms.Button btnGestorAlmacen;
         private System.Windows.Forms.Button btnGestorAdopciones;
         private System.Windows.Forms.Button btnGestorUsuarios;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelInteraccion;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

@@ -243,19 +243,19 @@ namespace PetFy
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblRaza;
-        private System.Windows.Forms.ComboBox cbTipo;
-        private System.Windows.Forms.RadioButton rbHembra;
-        private System.Windows.Forms.RadioButton rbMacho;
+        public System.Windows.Forms.ComboBox cbTipo;
+        public System.Windows.Forms.RadioButton rbHembra;
+        public System.Windows.Forms.RadioButton rbMacho;
         private System.Windows.Forms.Label lblTipo;
-        private System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblSexo;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblCaracteristicas;
-        private System.Windows.Forms.RichTextBox rtCaracteristicas;
-        private System.Windows.Forms.PictureBox pbFoto;
+        public System.Windows.Forms.RichTextBox rtCaracteristicas;
+        public System.Windows.Forms.PictureBox pbFoto;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnAdjuntar;
-        private System.Windows.Forms.Button cmdAgregar;
-        private System.Windows.Forms.ComboBox cbRaza;
+        public System.Windows.Forms.Button cmdAgregar;
+        public System.Windows.Forms.ComboBox cbRaza;
     }
 }

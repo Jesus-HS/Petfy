@@ -47,5 +47,10 @@ namespace PetFy
             // Otra forma de realizarlo
             //pBox.Region = New Region(curra)
         }
+
+        private void ucAnimal_Click(object sender, EventArgs e)
+        {
+            frmGestor.idElemento = this.Name;
+        }
     }
 }
