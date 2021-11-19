@@ -144,6 +144,7 @@ namespace PetFy
 
                 //Agregar el control (comentario)
                 flpGestor.Controls.Add(usanimal);
+                GC.Collect();
             }
         }
         private void imprimirPersonal()
