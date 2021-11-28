@@ -29,27 +29,17 @@ namespace PetFy.Modulo_Personal
         /// </summary>
         private void InitializeComponent()
         {
-            this.pbPersonal = new System.Windows.Forms.PictureBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.lblNumero = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPersonal)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pbPersonal
-            // 
-            this.pbPersonal.Location = new System.Drawing.Point(12, 15);
-            this.pbPersonal.Name = "pbPersonal";
-            this.pbPersonal.Size = new System.Drawing.Size(87, 87);
-            this.pbPersonal.TabIndex = 0;
-            this.pbPersonal.TabStop = false;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.lblNombre.Location = new System.Drawing.Point(114, 15);
+            this.lblNombre.Location = new System.Drawing.Point(20, 14);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(86, 25);
             this.lblNombre.TabIndex = 3;
@@ -59,7 +49,7 @@ namespace PetFy.Modulo_Personal
             // 
             this.lblDireccion.AutoSize = true;
             this.lblDireccion.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblDireccion.Location = new System.Drawing.Point(132, 52);
+            this.lblDireccion.Location = new System.Drawing.Point(38, 51);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(55, 13);
             this.lblDireccion.TabIndex = 6;
@@ -69,7 +59,7 @@ namespace PetFy.Modulo_Personal
             // 
             this.lblNumero.AutoSize = true;
             this.lblNumero.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblNumero.Location = new System.Drawing.Point(132, 74);
+            this.lblNumero.Location = new System.Drawing.Point(38, 73);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(47, 13);
             this.lblNumero.TabIndex = 7;
@@ -83,18 +73,16 @@ namespace PetFy.Modulo_Personal
             this.Controls.Add(this.lblNumero);
             this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.pbPersonal);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "ucPersonal";
-            this.Size = new System.Drawing.Size(472, 119);
-            ((System.ComponentModel.ISupportInitialize)(this.pbPersonal)).EndInit();
+            this.Size = new System.Drawing.Size(193, 119);
+            this.Click += new System.EventHandler(this.ucPersonal_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        public System.Windows.Forms.PictureBox pbPersonal;
         public System.Windows.Forms.Label lblNombre;
         public System.Windows.Forms.Label lblDireccion;
         public System.Windows.Forms.Label lblNumero;

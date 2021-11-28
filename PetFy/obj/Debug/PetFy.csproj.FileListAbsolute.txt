@@ -122,3 +122,8 @@ C:\Users\LasAv\Documents\GitHub\Petfy\PetFy\obj\Debug\PetFy.csproj.CopyComplete
 C:\Users\LasAv\Documents\GitHub\Petfy\PetFy\obj\Debug\PetFy.exe
 C:\Users\LasAv\Documents\GitHub\Petfy\PetFy\obj\Debug\PetFy.pdb
 C:\Users\LasAv\Documents\GitHub\Petfy\PetFy\obj\Debug\PetFy.Confirmacion.resources
+C:\Users\LasAv\Documents\GitHub\Petfy\PetFy\obj\Debug\PetFy.Modulo_Almacen.frmDonaciones.resources
+C:\Users\LasAv\Documents\GitHub\Petfy\PetFy\obj\Debug\PetFy.Modulo_Historial_Clinico.historialClinico.resources
+C:\Users\LasAv\Documents\GitHub\Petfy\PetFy\obj\Debug\PetFy.frmDependencias.resources
+C:\Users\LasAv\Documents\GitHub\Petfy\PetFy\bin\Debug\EntityFramework.dll
+C:\Users\LasAv\Documents\GitHub\Petfy\PetFy\bin\Debug\EntityFramework.xml

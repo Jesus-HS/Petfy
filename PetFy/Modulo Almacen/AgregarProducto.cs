@@ -17,11 +17,21 @@ namespace PetFy.Modulo_Almacen
             InitializeComponent();
         }
         Consultas consultas = new Consultas();
-        DataTable dt;
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            dt = consultas.obtenerTabla("SELECT *FROM productos");
-            consultas.Consulta("INSERT INTO productos VALUES('" + txtNombre.Text + "'," + nudCantidad.Value + ")");
+            if(btnAgregar.Text == "Modificar")
+            {
+                consultas.Consulta("UPDATE productos SET nombreProducto='" + txtNombre.Text + "', cantidad='" + nudCantidad.Value + "'");
+            }
+            else
+            {
+                consultas.Consulta("INSERT INTO productos VALUES('" + txtNombre.Text + "'," + nudCantidad.Value + ")");
+                if (checkDonacion.Checked)
+                {
+                    consultas.Consulta("INSERT INTO donaciones VALUES('" + txtNombre.Text + "'," + nudCantidad.Value + ")");
+                }
+            }
+            
         }
     }
 }

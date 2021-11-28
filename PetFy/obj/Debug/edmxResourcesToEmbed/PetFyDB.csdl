@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PetfyDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="adoptantes">
+    <Key>
+      <PropertyRef Name="idAdoptante" />
+    </Key>
+    <Property Name="idAdoptante" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreAdoptante" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="numeroAdoptante" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="identificaciónAdoptante" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="animales">
+    <Key>
+      <PropertyRef Name="idAnimal" />
+    </Key>
+    <Property Name="idAnimal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreAnimal" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="caracteristicas" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="generoAnimal" Type="Boolean" />
+    <Property Name="fechaAnimal" Type="DateTime" Precision="0" />
+    <Property Name="fotoAnimal" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="idRaza" Type="Int32" />
+    <Property Name="idTipo" Type="Int32" />
+    <Property Name="idHistorial" Type="Int32" />
+    <NavigationProperty Name="historial" Relationship="Self.FK__animales__idHist__1CF15040" FromRole="animales" ToRole="historial" />
+    <NavigationProperty Name="razas" Relationship="Self.FK__animales__idRaza__1B0907CE" FromRole="animales" ToRole="razas" />
+    <NavigationProperty Name="tipos" Relationship="Self.FK__animales__idTipo__1BFD2C07" FromRole="animales" ToRole="tipos" />
+  </EntityType>
+  <EntityType Name="donaciones">
+    <Key>
+      <PropertyRef Name="idDonacion" />
+    </Key>
+    <Property Name="idDonacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreDonacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="cantidadDonacion" Type="Int32" />
+  </EntityType>
+  <EntityType Name="historial">
+    <Key>
+      <PropertyRef Name="idHistorial" />
+    </Key>
+    <Property Name="idHistorial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="contenidoHistorial" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="nombreHistorial" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="animales" Relationship="Self.FK__animales__idHist__1CF15040" FromRole="historial" ToRole="animales" />
+  </EntityType>
+  <EntityType Name="personal">
+    <Key>
+      <PropertyRef Name="idPersonal" />
+    </Key>
+    <Property Name="idPersonal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombrePersonal" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="direccionPersonal" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="numeroPersonal" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="fotoPersonal" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="productos">
+    <Key>
+      <PropertyRef Name="idProducto" />
+    </Key>
+    <Property Name="idProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreProducto" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="cantidad" Type="Int32" />
+  </EntityType>
+  <EntityType Name="rangos">
+    <Key>
+      <PropertyRef Name="idRango" />
+    </Key>
+    <Property Name="idRango" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreRango" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="usuarios" Relationship="Self.FK__usuarios__idRang__24927208" FromRole="rangos" ToRole="usuarios" />
+  </EntityType>
+  <EntityType Name="razas">
+    <Key>
+      <PropertyRef Name="idRaza" />
+    </Key>
+    <Property Name="idRaza" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreRaza" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="animales" Relationship="Self.FK__animales__idRaza__1B0907CE" FromRole="razas" ToRole="animales" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tipos">
+    <Key>
+      <PropertyRef Name="idTipo" />
+    </Key>
+    <Property Name="idTipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreTipo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="animales" Relationship="Self.FK__animales__idTipo__1BFD2C07" FromRole="tipos" ToRole="animales" />
+  </EntityType>
+  <EntityType Name="usuarios">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreUsuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="contraseñaUsuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="idRango" Type="Int32" />
+    <NavigationProperty Name="rangos" Relationship="Self.FK__usuarios__idRang__24927208" FromRole="usuarios" ToRole="rangos" />
+  </EntityType>
+  <Association Name="FK__animales__idHist__1CF15040">
+    <End Role="historial" Type="Self.historial" Multiplicity="0..1" />
+    <End Role="animales" Type="Self.animales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="historial">
+        <PropertyRef Name="idHistorial" />
+      </Principal>
+      <Dependent Role="animales">
+        <PropertyRef Name="idHistorial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__animales__idRaza__1B0907CE">
+    <End Role="razas" Type="Self.razas" Multiplicity="0..1" />
+    <End Role="animales" Type="Self.animales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="razas">
+        <PropertyRef Name="idRaza" />
+      </Principal>
+      <Dependent Role="animales">
+        <PropertyRef Name="idRaza" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__animales__idTipo__1BFD2C07">
+    <End Role="tipos" Type="Self.tipos" Multiplicity="0..1" />
+    <End Role="animales" Type="Self.animales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipos">
+        <PropertyRef Name="idTipo" />
+      </Principal>
+      <Dependent Role="animales">
+        <PropertyRef Name="idTipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__usuarios__idRang__24927208">
+    <End Role="rangos" Type="Self.rangos" Multiplicity="0..1" />
+    <End Role="usuarios" Type="Self.usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rangos">
+        <PropertyRef Name="idRango" />
+      </Principal>
+      <Dependent Role="usuarios">
+        <PropertyRef Name="idRango" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PetfyDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="adoptantes" EntityType="Self.adoptantes" />
+    <EntitySet Name="animales" EntityType="Self.animales" />
+    <EntitySet Name="donaciones" EntityType="Self.donaciones" />
+    <EntitySet Name="historial" EntityType="Self.historial" />
+    <EntitySet Name="personal" EntityType="Self.personal" />
+    <EntitySet Name="productos" EntityType="Self.productos" />
+    <EntitySet Name="rangos" EntityType="Self.rangos" />
+    <EntitySet Name="razas" EntityType="Self.razas" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="tipos" EntityType="Self.tipos" />
+    <EntitySet Name="usuarios" EntityType="Self.usuarios" />
+    <AssociationSet Name="FK__animales__idHist__1CF15040" Association="Self.FK__animales__idHist__1CF15040">
+      <End Role="historial" EntitySet="historial" />
+      <End Role="animales" EntitySet="animales" />
+    </AssociationSet>
+    <AssociationSet Name="FK__animales__idRaza__1B0907CE" Association="Self.FK__animales__idRaza__1B0907CE">
+      <End Role="razas" EntitySet="razas" />
+      <End Role="animales" EntitySet="animales" />
+    </AssociationSet>
+    <AssociationSet Name="FK__animales__idTipo__1BFD2C07" Association="Self.FK__animales__idTipo__1BFD2C07">
+      <End Role="tipos" EntitySet="tipos" />
+      <End Role="animales" EntitySet="animales" />
+    </AssociationSet>
+    <AssociationSet Name="FK__usuarios__idRang__24927208" Association="Self.FK__usuarios__idRang__24927208">
+      <End Role="rangos" EntitySet="rangos" />
+      <End Role="usuarios" EntitySet="usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

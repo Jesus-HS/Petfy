@@ -31,6 +31,7 @@ namespace PetFy
         {
             this.lblCantidad = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCantidad
@@ -55,15 +56,28 @@ namespace PetFy
             this.lblNombre.TabIndex = 11;
             this.lblNombre.Text = "Nombre";
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(28, 97);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 44);
+            this.btnEliminar.TabIndex = 13;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // ucProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.lblCantidad);
             this.Controls.Add(this.lblNombre);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "ucProducto";
-            this.Size = new System.Drawing.Size(277, 132);
+            this.Size = new System.Drawing.Size(132, 161);
+            this.Click += new System.EventHandler(this.ucProducto_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -72,5 +86,6 @@ namespace PetFy
         #endregion
         public System.Windows.Forms.Label lblCantidad;
         public System.Windows.Forms.Label lblNombre;
+        public System.Windows.Forms.Button btnEliminar;
     }
 }

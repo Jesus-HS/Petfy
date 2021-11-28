@@ -38,6 +38,9 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -63,6 +66,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
@@ -74,6 +78,8 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -92,17 +98,47 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adoptantes.cs">
+      <DependentUpon>PetFyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="animales.cs">
+      <DependentUpon>PetFyDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Confirmación.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Confirmación.Designer.cs">
       <DependentUpon>Confirmación.cs</DependentUpon>
     </Compile>
+    <Compile Include="donaciones.cs">
+      <DependentUpon>PetFyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="frmDependencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDependencias.Designer.cs">
+      <DependentUpon>frmDependencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="historial.cs">
+      <DependentUpon>PetFyDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modulo Almacen\AgregarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulo Almacen\AgregarProducto.Designer.cs">
       <DependentUpon>AgregarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Almacen\Donaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Almacen\Donaciones.Designer.cs">
+      <DependentUpon>Donaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Historial Clinico\historialClinico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulo Historial Clinico\historialClinico.Designer.cs">
+      <DependentUpon>historialClinico.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulo Personal\frmAgregarPersonal.cs">
       <SubType>Form</SubType>
@@ -159,6 +195,27 @@
     <Compile Include="Modulo Usuarios\ucUsuario.Designer.cs">
       <DependentUpon>ucUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="personal.cs">
+      <DependentUpon>PetFyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PetFyDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PetFyDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PetFyDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PetFyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PetFyDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PetFyDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="productos.cs">
+      <DependentUpon>PetFyDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Modulo Almacen\ucProducto.cs">
@@ -167,14 +224,38 @@
     <Compile Include="Modulo Almacen\ucProducto.Designer.cs">
       <DependentUpon>ucProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="rangos.cs">
+      <DependentUpon>PetFyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="razas.cs">
+      <DependentUpon>PetFyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>PetFyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tipos.cs">
+      <DependentUpon>PetFyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usuarios.cs">
+      <DependentUpon>PetFyDB.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Confirmación.resx">
       <DependentUpon>Confirmación.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDependencias.resx">
+      <DependentUpon>frmDependencias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo Almacen\AgregarProducto.resx">
       <DependentUpon>AgregarProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Almacen\Donaciones.resx">
+      <DependentUpon>Donaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulo Almacen\ucProducto.resx">
       <DependentUpon>ucProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Historial Clinico\historialClinico.resx">
+      <DependentUpon>historialClinico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo Personal\frmAgregarPersonal.resx">
       <DependentUpon>frmAgregarPersonal.cs</DependentUpon>
@@ -214,6 +295,13 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <EntityDeploy Include="PetFyDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PetFyDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PetFyDB.edmx.diagram">
+      <DependentUpon>PetFyDB.edmx</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -238,6 +326,210 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Petfy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo-programa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo-programa1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\huella.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\huella %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\farmacia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caja %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corazon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grupo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\llave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bote-de-basura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bote-de-basura %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bote-de-basura %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton-editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton-agregar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton-agregar %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\busqueda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\busqueda2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\busqueda3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\busqueda4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\busqueda5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circuloMorado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circuloMorado1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circuloMorado11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo-programa2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circuloMorado2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circuloRosado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconoEliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconoEliminar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconoEliminar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconoEliminar3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconoEliminarr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconoLupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconoEditar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconoEditdar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconoAgregarr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\huellaInactiva.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dependenciaActivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dependenciaInactiva.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\historialActivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\historialInactivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\huellaActiva.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\huellaInactiva1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\personalActivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\personalInactivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuarioActivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuarioInactivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dependenciaInactiva1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adopcionesActivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adopcionesInactivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\almacenActivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\almacenInactivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuarioActivo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuarioInactivo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adopcionesInactivo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PerfilPerro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo-programa3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo-programa4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo-programa5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PetFyDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PetFyDB.Context.cs</LastGenOutput>
+      <DependentUpon>PetFyDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="PetFyDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PetFyDB.edmx</DependentUpon>
+      <LastGenOutput>PetFyDB.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PetfyDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="adoptantes">
+    <Key>
+      <PropertyRef Name="idAdoptante" />
+    </Key>
+    <Property Name="idAdoptante" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreAdoptante" Type="varchar" MaxLength="20" />
+    <Property Name="numeroAdoptante" Type="varchar" MaxLength="10" />
+    <Property Name="identificaciónAdoptante" Type="image" />
+  </EntityType>
+  <EntityType Name="animales">
+    <Key>
+      <PropertyRef Name="idAnimal" />
+    </Key>
+    <Property Name="idAnimal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreAnimal" Type="varchar" MaxLength="20" />
+    <Property Name="caracteristicas" Type="varchar" MaxLength="300" />
+    <Property Name="generoAnimal" Type="bit" />
+    <Property Name="fechaAnimal" Type="date" />
+    <Property Name="fotoAnimal" Type="image" />
+    <Property Name="idRaza" Type="int" />
+    <Property Name="idTipo" Type="int" />
+    <Property Name="idHistorial" Type="int" />
+  </EntityType>
+  <EntityType Name="donaciones">
+    <Key>
+      <PropertyRef Name="idDonacion" />
+    </Key>
+    <Property Name="idDonacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreDonacion" Type="varchar" MaxLength="20" />
+    <Property Name="cantidadDonacion" Type="int" />
+  </EntityType>
+  <EntityType Name="historial">
+    <Key>
+      <PropertyRef Name="idHistorial" />
+    </Key>
+    <Property Name="idHistorial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="contenidoHistorial" Type="varbinary(max)" />
+    <Property Name="nombreHistorial" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="personal">
+    <Key>
+      <PropertyRef Name="idPersonal" />
+    </Key>
+    <Property Name="idPersonal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombrePersonal" Type="varchar" MaxLength="20" />
+    <Property Name="direccionPersonal" Type="varchar" MaxLength="30" />
+    <Property Name="numeroPersonal" Type="varchar" MaxLength="10" />
+    <Property Name="fotoPersonal" Type="image" />
+  </EntityType>
+  <EntityType Name="productos">
+    <Key>
+      <PropertyRef Name="idProducto" />
+    </Key>
+    <Property Name="idProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreProducto" Type="varchar" MaxLength="20" />
+    <Property Name="cantidad" Type="int" />
+  </EntityType>
+  <EntityType Name="rangos">
+    <Key>
+      <PropertyRef Name="idRango" />
+    </Key>
+    <Property Name="idRango" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreRango" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="razas">
+    <Key>
+      <PropertyRef Name="idRaza" />
+    </Key>
+    <Property Name="idRaza" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreRaza" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tipos">
+    <Key>
+      <PropertyRef Name="idTipo" />
+    </Key>
+    <Property Name="idTipo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreTipo" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="usuarios">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreUsuario" Type="varchar" MaxLength="20" />
+    <Property Name="contraseñaUsuario" Type="varchar" MaxLength="20" />
+    <Property Name="idRango" Type="int" />
+  </EntityType>
+  <Association Name="FK__animales__idHist__1CF15040">
+    <End Role="historial" Type="Self.historial" Multiplicity="0..1" />
+    <End Role="animales" Type="Self.animales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="historial">
+        <PropertyRef Name="idHistorial" />
+      </Principal>
+      <Dependent Role="animales">
+        <PropertyRef Name="idHistorial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__animales__idRaza__1B0907CE">
+    <End Role="razas" Type="Self.razas" Multiplicity="0..1" />
+    <End Role="animales" Type="Self.animales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="razas">
+        <PropertyRef Name="idRaza" />
+      </Principal>
+      <Dependent Role="animales">
+        <PropertyRef Name="idRaza" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__animales__idTipo__1BFD2C07">
+    <End Role="tipos" Type="Self.tipos" Multiplicity="0..1" />
+    <End Role="animales" Type="Self.animales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipos">
+        <PropertyRef Name="idTipo" />
+      </Principal>
+      <Dependent Role="animales">
+        <PropertyRef Name="idTipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__usuarios__idRang__24927208">
+    <End Role="rangos" Type="Self.rangos" Multiplicity="0..1" />
+    <End Role="usuarios" Type="Self.usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rangos">
+        <PropertyRef Name="idRango" />
+      </Principal>
+      <Dependent Role="usuarios">
+        <PropertyRef Name="idRango" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PetfyDBModelStoreContainer">
+    <EntitySet Name="adoptantes" EntityType="Self.adoptantes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="animales" EntityType="Self.animales" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="donaciones" EntityType="Self.donaciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="historial" EntityType="Self.historial" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="personal" EntityType="Self.personal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="productos" EntityType="Self.productos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rangos" EntityType="Self.rangos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="razas" EntityType="Self.razas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tipos" EntityType="Self.tipos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__animales__idHist__1CF15040" Association="Self.FK__animales__idHist__1CF15040">
+      <End Role="historial" EntitySet="historial" />
+      <End Role="animales" EntitySet="animales" />
+    </AssociationSet>
+    <AssociationSet Name="FK__animales__idRaza__1B0907CE" Association="Self.FK__animales__idRaza__1B0907CE">
+      <End Role="razas" EntitySet="razas" />
+      <End Role="animales" EntitySet="animales" />
+    </AssociationSet>
+    <AssociationSet Name="FK__animales__idTipo__1BFD2C07" Association="Self.FK__animales__idTipo__1BFD2C07">
+      <End Role="tipos" EntitySet="tipos" />
+      <End Role="animales" EntitySet="animales" />
+    </AssociationSet>
+    <AssociationSet Name="FK__usuarios__idRang__24927208" Association="Self.FK__usuarios__idRang__24927208">
+      <End Role="rangos" EntitySet="rangos" />
+      <End Role="usuarios" EntitySet="usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

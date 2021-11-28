@@ -42,20 +42,15 @@ namespace PetFy
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCaracteristicas = new System.Windows.Forms.Label();
             this.rtCaracteristicas = new System.Windows.Forms.RichTextBox();
-            this.pbFoto = new System.Windows.Forms.PictureBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnAdjuntar = new System.Windows.Forms.Button();
             this.cmdAgregar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(158, 9);
+            this.label1.Location = new System.Drawing.Point(25, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(216, 25);
             this.label1.TabIndex = 0;
@@ -177,62 +172,34 @@ namespace PetFy
             this.rtCaracteristicas.TabIndex = 3;
             this.rtCaracteristicas.Text = "";
             // 
-            // pbFoto
-            // 
-            this.pbFoto.Location = new System.Drawing.Point(6, 19);
-            this.pbFoto.Name = "pbFoto";
-            this.pbFoto.Size = new System.Drawing.Size(200, 200);
-            this.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbFoto.TabIndex = 4;
-            this.pbFoto.TabStop = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnAdjuntar);
-            this.groupBox2.Controls.Add(this.pbFoto);
-            this.groupBox2.Location = new System.Drawing.Point(283, 37);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(214, 254);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Foto";
-            // 
-            // btnAdjuntar
-            // 
-            this.btnAdjuntar.Location = new System.Drawing.Point(6, 225);
-            this.btnAdjuntar.Name = "btnAdjuntar";
-            this.btnAdjuntar.Size = new System.Drawing.Size(200, 23);
-            this.btnAdjuntar.TabIndex = 5;
-            this.btnAdjuntar.Text = "Adjuntar imagen";
-            this.btnAdjuntar.UseVisualStyleBackColor = true;
-            this.btnAdjuntar.Click += new System.EventHandler(this.btnAdjuntar_Click);
-            // 
             // cmdAgregar
             // 
+            this.cmdAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(78)))), ((int)(((byte)(221)))));
+            this.cmdAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdAgregar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.cmdAgregar.Location = new System.Drawing.Point(15, 297);
             this.cmdAgregar.Name = "cmdAgregar";
-            this.cmdAgregar.Size = new System.Drawing.Size(482, 36);
+            this.cmdAgregar.Size = new System.Drawing.Size(262, 36);
             this.cmdAgregar.TabIndex = 6;
             this.cmdAgregar.Text = "Agregar";
-            this.cmdAgregar.UseVisualStyleBackColor = true;
+            this.cmdAgregar.UseVisualStyleBackColor = false;
             this.cmdAgregar.Click += new System.EventHandler(this.cmdAgregar_Click);
             // 
             // frmAgregarAnimal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 340);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(287, 340);
             this.Controls.Add(this.cmdAgregar);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.rtCaracteristicas);
             this.Controls.Add(this.lblCaracteristicas);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmAgregarAnimal";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).EndInit();
-            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,9 +219,6 @@ namespace PetFy
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblCaracteristicas;
         public System.Windows.Forms.RichTextBox rtCaracteristicas;
-        public System.Windows.Forms.PictureBox pbFoto;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnAdjuntar;
         public System.Windows.Forms.Button cmdAgregar;
         public System.Windows.Forms.ComboBox cbRaza;
     }

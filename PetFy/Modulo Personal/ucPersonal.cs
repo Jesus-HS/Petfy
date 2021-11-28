@@ -16,5 +16,10 @@ namespace PetFy.Modulo_Personal
         {
             InitializeComponent();
         }
+
+        private void ucPersonal_Click(object sender, EventArgs e)
+        {
+            frmGestor.idElemento = this.Name;
+        }
     }
 }

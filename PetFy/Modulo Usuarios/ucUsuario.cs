@@ -16,5 +16,10 @@ namespace PetFy.Modulo_Usuarios
         {
             InitializeComponent();
         }
+
+        private void ucUsuario_Click(object sender, EventArgs e)
+        {
+            frmGestor.idElemento = this.Name;
+        }
     }
 }

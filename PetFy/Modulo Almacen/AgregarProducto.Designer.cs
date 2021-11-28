@@ -30,10 +30,11 @@ namespace PetFy.Modulo_Almacen
         private void InitializeComponent()
         {
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.nudCantidad = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.checkDonacion = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,14 +45,14 @@ namespace PetFy.Modulo_Almacen
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 0;
             // 
-            // label1
+            // lblNombre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(34, 25);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(35, 13);
+            this.lblNombre.TabIndex = 1;
+            this.lblNombre.Text = "label1";
             // 
             // nudCantidad
             // 
@@ -71,7 +72,7 @@ namespace PetFy.Modulo_Almacen
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(37, 123);
+            this.btnAgregar.Location = new System.Drawing.Point(37, 142);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(100, 23);
             this.btnAgregar.TabIndex = 4;
@@ -79,15 +80,26 @@ namespace PetFy.Modulo_Almacen
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // checkDonacion
+            // 
+            this.checkDonacion.AutoSize = true;
+            this.checkDonacion.Location = new System.Drawing.Point(37, 119);
+            this.checkDonacion.Name = "checkDonacion";
+            this.checkDonacion.Size = new System.Drawing.Size(100, 17);
+            this.checkDonacion.TabIndex = 5;
+            this.checkDonacion.Text = "Articulo donado";
+            this.checkDonacion.UseVisualStyleBackColor = true;
+            // 
             // frmAgregarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(179, 192);
+            this.ClientSize = new System.Drawing.Size(179, 200);
+            this.Controls.Add(this.checkDonacion);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.nudCantidad);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtNombre);
             this.Name = "frmAgregarProducto";
             this.Text = "AgregarProducto";
@@ -99,10 +111,11 @@ namespace PetFy.Modulo_Almacen
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown nudCantidad;
+        public System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label lblNombre;
+        public System.Windows.Forms.NumericUpDown nudCantidad;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnAgregar;
+        public System.Windows.Forms.Button btnAgregar;
+        public System.Windows.Forms.CheckBox checkDonacion;
     }
 }

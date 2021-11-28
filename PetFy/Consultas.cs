@@ -19,7 +19,7 @@ namespace PetFy
         public Consultas()
         {
             try
-            {//bkdoyaci_petfy Petfy123
+            {
                 cn = new SqlConnection("Data Source=PetfyDB.mssql.somee.com; " +
                     "Initial Catalog=PetfyDB; " +
                     "User ID=Petfy_SQLLogin_1;" +
