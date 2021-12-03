@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDonaciones));
             this.flpDonaciones = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
@@ -45,7 +46,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(307, 479);
             this.Controls.Add(this.flpDonaciones);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDonaciones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Donaciones";
             this.Load += new System.EventHandler(this.Donaciones_Load);
             this.ResumeLayout(false);

@@ -23,22 +23,29 @@ namespace PetFy
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            var idTipo = String.Empty;
-            if (btnAgregar.Text == "Modificar")
+            if(txtUsuario.Text != "" && txtContraseña.Text != "")
             {
-                dt = consulta.obtenerTabla("SELECT idRango FROM rangos WHERE nombreRango = '" + cbRango.Text + "'");
-                idTipo = dt.Rows[0]["idRango"].ToString().Trim();
+                var idTipo = String.Empty;
+                if (btnAgregar.Text == "Modificar")
+                {
+                    dt = consulta.obtenerTabla("SELECT idRango FROM rangos WHERE nombreRango = '" + cbRango.Text + "'");
+                    idTipo = dt.Rows[0]["idRango"].ToString().Trim();
 
-                if (txtContraseña.Text == txtConfirmarContraseña.Text)
-                    consulta.Consulta("UPDATE usuarios SET nombreUsuario = '" + txtUsuario.Text + "', claveUsuario = '" + txtContraseña.Text + "', idTipo = '" + idTipo + "')");
-            }
-            else
-            {
-                dt = consulta.obtenerTabla("SELECT idRango FROM rangos WHERE nombreRango = '" + cbRango.Text + "'");
-                idTipo = dt.Rows[0]["idRango"].ToString().Trim();
+                    if (txtContraseña.Text == txtConfirmarContraseña.Text)
+                        consulta.Consulta("UPDATE usuarios SET nombreUsuario = '" + txtUsuario.Text + "', contraseñaUsuario = '" + txtContraseña.Text + "', idRango = '" + idTipo + "' WHERE idUsuario = '" + Name + "'");
+                    else
+                        MessageBox.Show("Verifique que las contraseñas sean iguales.");
+                }
+                else
+                {
+                    dt = consulta.obtenerTabla("SELECT idRango FROM rangos WHERE nombreRango = '" + cbRango.Text + "'");
+                    idTipo = dt.Rows[0]["idRango"].ToString().Trim();
 
-                if (txtContraseña.Text == txtConfirmarContraseña.Text)
-                    consulta.Consulta("INSERT INTO usuarios VALUES('" + txtUsuario.Text + "','" + txtContraseña.Text + "','" + idTipo + "')");
+                    if (txtContraseña.Text == txtConfirmarContraseña.Text)
+                        consulta.Consulta("INSERT INTO usuarios VALUES('" + txtUsuario.Text + "','" + txtContraseña.Text + "','" + idTipo + "')");
+                    else
+                        MessageBox.Show("Verifique que las contraseñas sean iguales.");
+                }
             }
             
         }

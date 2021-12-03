@@ -18,19 +18,28 @@ namespace PetFy
         }
         string idElemento;
         Consultas consulta = new Consultas();
+        DataTable dt = new DataTable();
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            idElemento = this.Name;
             try
             {
-                if (MessageBox.Show("¿Desea eliminar el elemento seleccionado?" + idElemento, "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes && idElemento != string.Empty)
+                dt = consulta.obtenerTabla("select idUsuario, nombreUsuario, contraseñaUsuario, rangos.nombreRango from usuarios JOIN rangos ON rangos.idRango = usuarios.idRango WHERE idUsuario = '" + frmGestor.idUsuario + "';");
+                if (dt.Rows[0]["nombreRango"].ToString() == "Administrador")
                 {
-                    consulta.Consulta("DELETE FROM donaciones WHERE idDonacion='" + idElemento + "'");
-                    idElemento = string.Empty;
-                    MessageBox.Show("Se elimino");
+                    idElemento = this.Name;
+                    if (MessageBox.Show("¿Desea eliminar el elemento seleccionado?" + idElemento, "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes && idElemento != string.Empty)
+                    {
+                        consulta.Consulta("DELETE FROM donaciones WHERE idDonacion='" + idElemento + "'");
+                        idElemento = string.Empty;
+                        MessageBox.Show("Se elimino");
+                    }
+                    else
+                        MessageBox.Show("Rechazo la pregunta o quizas no selecciono nada.", "No se elimino");
                 }
                 else
-                    MessageBox.Show("Rechazo la pregunta o quizas no selecciono nada.", "No se elimino");
+                {
+                    MessageBox.Show("Solo el administrador realizar esta accion.");
+                }
             }
             catch (Exception ex) { MessageBox.Show(ex.ToString(), "Mostrar mensaje al desarrollador"); }
         }

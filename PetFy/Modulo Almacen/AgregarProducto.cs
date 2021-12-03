@@ -21,7 +21,7 @@ namespace PetFy.Modulo_Almacen
         {
             if(btnAgregar.Text == "Modificar")
             {
-                consultas.Consulta("UPDATE productos SET nombreProducto='" + txtNombre.Text + "', cantidad='" + nudCantidad.Value + "'");
+                consultas.Consulta("UPDATE productos SET nombreProducto='" + txtNombre.Text + "', cantidad='" + nudCantidad.Value + "' WHERE idProducto='" + this.Name + "'");
             }
             else
             {

@@ -118,26 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="almacenInactivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\almacenInactivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="historialInactivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\historialInactivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconoEditar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconoEditdar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pdf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="adopcionesActivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adopcionesActivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="huellaInactiva" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\huellaInactiva1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="corazon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\corazon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="iconoLupa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconoLupa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="grupo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\grupo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="usuarioActivo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\usuarioActivo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,8 +175,14 @@
   <data name="personalActivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\personalActivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="personalInactivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\personalInactivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fondoInicio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondoInicio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="historialActivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\historialActivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="huellaActiva" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\huellaActiva.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="adopcionesInactivo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\adopcionesInactivo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,8 +190,8 @@
   <data name="iconoEliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconoEliminarr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="almacenInactivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\almacenInactivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="caja (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\caja (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,14 +205,14 @@
   <data name="circuloMorado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\circuloMorado2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="adopcionesActivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\adopcionesActivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dependenciaActivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dependenciaActivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Fondo-programa2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fondo-programa5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="usuarioInactivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\usuarioInactivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fondoHistorial" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondoHistorial.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="circuloRosado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\circuloRosado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,25 +229,28 @@
   <data name="ppDoge" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ppDoge.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="huellaActiva" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\huellaActiva.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="personalInactivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\personalInactivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dependenciaInactiva" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dependenciaInactiva.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="corazon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\corazon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dependenciaActivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dependenciaActivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="llave" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\llave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="historialActivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\historialActivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="grupo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\grupo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="adopcionesInactivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\adopcionesInactivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Fondo-programa2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fondo-programa5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pdf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ilustración-sin-título_adobespark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ilustración-sin-título_adobespark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

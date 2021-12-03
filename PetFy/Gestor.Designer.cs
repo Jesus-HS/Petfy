@@ -164,7 +164,7 @@ namespace PetFy
             this.btnGestorPersonal.Name = "btnGestorPersonal";
             this.btnGestorPersonal.Size = new System.Drawing.Size(145, 28);
             this.btnGestorPersonal.TabIndex = 9;
-            this.btnGestorPersonal.Text = "      Personal";
+            this.btnGestorPersonal.Text = "      Voluntarios";
             this.btnGestorPersonal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGestorPersonal.UseVisualStyleBackColor = false;
             this.btnGestorPersonal.Click += new System.EventHandler(this.btnPersonal_Click_1);
@@ -302,6 +302,7 @@ namespace PetFy
             // 
             this.lblCerrar.AutoSize = true;
             this.lblCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.lblCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
             this.lblCerrar.Location = new System.Drawing.Point(813, 12);
@@ -337,6 +338,7 @@ namespace PetFy
             this.Controls.Add(this.flpGestor);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGestor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TransparencyKey = System.Drawing.Color.Lime;

@@ -22,14 +22,17 @@ namespace PetFy
             if(rbRango.Checked && txtRango.Text != "")
             {
                 consulta.Consulta("INSERT INTO rangos VALUES ('" + txtRango.Text + "')");
+                MessageBox.Show("Se ha insertado con exito el rango");
             }
             else if (rbRaza.Checked && txtRaza.Text != "")
             {
                 consulta.Consulta("INSERT INTO razas VALUES('" + txtRaza.Text + "')");
+                MessageBox.Show("Se ha insertado con exito la raza");
             }
             else if (rbTipo.Checked && txtTipo.Text != "")
             {
                 consulta.Consulta("INSERT INTO tipos VALUES('" + txtTipo.Text + "')");
+                MessageBox.Show("Se ha insertado con exito el tipo de animal");
             }
             else
             {

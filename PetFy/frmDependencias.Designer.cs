@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDependencias));
             this.txtTipo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -120,18 +121,21 @@
             // 
             // btnSubir
             // 
+            this.btnSubir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(78)))), ((int)(((byte)(221)))));
+            this.btnSubir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSubir.Location = new System.Drawing.Point(12, 163);
             this.btnSubir.Name = "btnSubir";
             this.btnSubir.Size = new System.Drawing.Size(138, 26);
             this.btnSubir.TabIndex = 9;
             this.btnSubir.Text = "Subir";
-            this.btnSubir.UseVisualStyleBackColor = true;
+            this.btnSubir.UseVisualStyleBackColor = false;
             this.btnSubir.Click += new System.EventHandler(this.btnSubir_Click);
             // 
             // frmDependencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(164, 201);
             this.Controls.Add(this.btnSubir);
             this.Controls.Add(this.rbRango);
@@ -144,7 +148,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTipo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDependencias";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dependencias";
             this.ResumeLayout(false);
             this.PerformLayout();

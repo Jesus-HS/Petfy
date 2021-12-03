@@ -29,6 +29,7 @@ namespace PetFy.Modulo_Almacen
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgregarProducto));
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.nudCantidad = new System.Windows.Forms.NumericUpDown();
@@ -50,9 +51,9 @@ namespace PetFy.Modulo_Almacen
             this.lblNombre.AutoSize = true;
             this.lblNombre.Location = new System.Drawing.Point(34, 25);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(35, 13);
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 1;
-            this.lblNombre.Text = "label1";
+            this.lblNombre.Text = "Nombre";
             // 
             // nudCantidad
             // 
@@ -66,18 +67,20 @@ namespace PetFy.Modulo_Almacen
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(34, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "label2";
+            this.label2.Text = "Cantidad";
             // 
             // btnAgregar
             // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(78)))), ((int)(((byte)(221)))));
+            this.btnAgregar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAgregar.Location = new System.Drawing.Point(37, 142);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(100, 23);
             this.btnAgregar.TabIndex = 4;
             this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // checkDonacion
@@ -94,6 +97,7 @@ namespace PetFy.Modulo_Almacen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(179, 200);
             this.Controls.Add(this.checkDonacion);
             this.Controls.Add(this.btnAgregar);
@@ -101,8 +105,11 @@ namespace PetFy.Modulo_Almacen
             this.Controls.Add(this.nudCantidad);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtNombre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAgregarProducto";
-            this.Text = "AgregarProducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Agregar Producto";
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -233,6 +233,26 @@ namespace PetFy.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fondoHistorial {
+            get {
+                object obj = ResourceManager.GetObject("fondoHistorial", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondoInicio {
+            get {
+                object obj = ResourceManager.GetObject("fondoInicio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fondoPrograma {
             get {
                 object obj = ResourceManager.GetObject("fondoPrograma", resourceCulture);
@@ -346,6 +366,16 @@ namespace PetFy.Properties {
         internal static System.Drawing.Bitmap iconoLupa {
             get {
                 object obj = ResourceManager.GetObject("iconoLupa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ilustración_sin_título_adobespark {
+            get {
+                object obj = ResourceManager.GetObject("Ilustración-sin-título_adobespark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -122,6 +122,36 @@
     <Compile Include="historial.cs">
       <DependentUpon>PetFyDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modulo Adopciones\AgregarAdopcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Adopciones\AgregarAdopcion.Designer.cs">
+      <DependentUpon>AgregarAdopcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Adopciones\frmAgregarAdoptante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Adopciones\frmAgregarAdoptante.Designer.cs">
+      <DependentUpon>frmAgregarAdoptante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Adopciones\ucAdopciones.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulo Adopciones\ucAdopciones.Designer.cs">
+      <DependentUpon>ucAdopciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Adopciones\ucAdoptado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulo Adopciones\ucAdoptado.Designer.cs">
+      <DependentUpon>ucAdoptado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Adopciones\ucAdoptante.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulo Adopciones\ucAdoptante.Designer.cs">
+      <DependentUpon>ucAdoptante.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulo Almacen\AgregarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,11 +164,17 @@
     <Compile Include="Modulo Almacen\Donaciones.Designer.cs">
       <DependentUpon>Donaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modulo Historial Clinico\historialClinico.cs">
+    <Compile Include="Modulo Historial Clinico\ucHAnimal.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modulo Historial Clinico\historialClinico.Designer.cs">
-      <DependentUpon>historialClinico.cs</DependentUpon>
+    <Compile Include="Modulo Historial Clinico\ucHAnimal.Designer.cs">
+      <DependentUpon>ucHAnimal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Historial Clinico\ucHClinico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulo Historial Clinico\ucHClinico.Designer.cs">
+      <DependentUpon>ucHClinico.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulo Personal\frmAgregarPersonal.cs">
       <SubType>Form</SubType>
@@ -245,6 +281,21 @@
     <EmbeddedResource Include="frmDependencias.resx">
       <DependentUpon>frmDependencias.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Adopciones\AgregarAdopcion.resx">
+      <DependentUpon>AgregarAdopcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Adopciones\frmAgregarAdoptante.resx">
+      <DependentUpon>frmAgregarAdoptante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Adopciones\ucAdopciones.resx">
+      <DependentUpon>ucAdopciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Adopciones\ucAdoptado.resx">
+      <DependentUpon>ucAdoptado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Adopciones\ucAdoptante.resx">
+      <DependentUpon>ucAdoptante.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulo Almacen\AgregarProducto.resx">
       <DependentUpon>AgregarProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,8 +305,11 @@
     <EmbeddedResource Include="Modulo Almacen\ucProducto.resx">
       <DependentUpon>ucProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo Historial Clinico\historialClinico.resx">
-      <DependentUpon>historialClinico.cs</DependentUpon>
+    <EmbeddedResource Include="Modulo Historial Clinico\ucHAnimal.resx">
+      <DependentUpon>ucHAnimal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Historial Clinico\ucHClinico.resx">
+      <DependentUpon>ucHClinico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo Personal\frmAgregarPersonal.resx">
       <DependentUpon>frmAgregarPersonal.cs</DependentUpon>
@@ -527,6 +581,9 @@
       <DependentUpon>PetFyDB.edmx</DependentUpon>
       <LastGenOutput>PetFyDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Ilustración-sin-título_adobespark.png" />
+    <None Include="Resources\fondoInicio.png" />
+    <None Include="Resources\fondoHistorial.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

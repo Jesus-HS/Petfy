@@ -13,7 +13,9 @@ namespace PetFy.Modulo_Historial_Clinico
 {
     public partial class frmAgregarHistorialClinico : Form
     {
-        private string ruta;
+        static public string ruta;
+        static public int idHistorial = 0;
+        static public int idAnimal = 0;
         public frmAgregarHistorialClinico()
         {
             InitializeComponent();
@@ -23,39 +25,32 @@ namespace PetFy.Modulo_Historial_Clinico
         private void frmAgregarHistorialClinico_Load(object sender, EventArgs e)
         {
             cargarHistoriales("SELECT *FROM historial");
+            cargarAnimales("SELECT idAnimal, nombreAnimal, caracteristicas FROM animales");
+        }
+
+        private void cargarAnimales(string query)
+        {
             //Obtenemos la tabla de los animales registrados
-            DataTable dt = consulta.obtenerTabla("SELECT idAnimal, nombreAnimal, caracteristicas, generoAnimal, fechaAnimal, razas.nombreRaza, tipos.nombreTipo, fotoAnimal " +
-                                                     "FROM animales " +
-                                                     "JOIN Razas ON razas.idRaza = animales.idRaza " +
-                                                     "JOIN tipos ON tipos.idTipo = animales.idTipo; ");
-                //Guardamos la cantidad de animales para poder imprimirlos
-                int contador = dt.Rows.Count;
-                //Imprimimos todos los animales
-                for (int i = 0; i < contador; i++)
-                {
-                    //Declaramos la tarjeta del perro
-                    //Asi no usamos uno solo para estar sobreescribiendo
-                    ucAnimal usanimal = new ucAnimal();
-                    //Le asignamos el id del animal a la tarjeta para identificarla
-                    usanimal.Name = dt.Rows[i]["idAnimal"].ToString();
-                    //Asignamos la información del animal en sus campos correspondientes
-                    usanimal.lblNombre.Text = dt.Rows[i]["nombreAnimal"].ToString();
-                    usanimal.lblRaza.Text = dt.Rows[i]["nombreRaza"].ToString();
-                    usanimal.lblTipo.Text = dt.Rows[i]["nombreTipo"].ToString();
-                    usanimal.lblFecha.Text = dt.Rows[i]["fechaAnimal"].ToString();
-                    //Si el valor de la columna genero animal es true significa que es macho, sino es hembra
-                    //la información de dicha columna es guardada en bit
-                    if (dt.Rows[i]["generoAnimal"].ToString() == "True")
-                        usanimal.lblSexo.Text = "Macho";
-                    else
-                        usanimal.lblSexo.Text = "Hembra";
-                    //Asignamos un margen al control de usuario para estetica
-                    //                            Ar  Iz Ab De
-                    usanimal.Margin = new Padding(10, 10, 0, 0);
-                    //Agregar el control (comentario)
-                    flpGestor.Controls.Add(usanimal);
-                    GC.Collect();
-                }
+            DataTable dt = consulta.obtenerTabla(query);
+            //Imprimimos todos los animales
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                //Declaramos la tarjeta del perro
+                //Asi no usamos uno solo para estar sobreescribiendo
+                ucHAnimal uchanimal = new ucHAnimal();
+                //Le asignamos el id del animal a la tarjeta para identificarla
+                uchanimal.Name = dt.Rows[i]["idAnimal"].ToString();
+                //Asignamos la información del animal en sus campos correspondientes
+                uchanimal.lblNombre.Text = dt.Rows[i]["nombreAnimal"].ToString();
+                //Asignamos la información adicional
+                uchanimal.txtAdicional.Text = dt.Rows[i]["caracteristicas"].ToString();
+                //Asignamos un margen al control de usuario para estetica
+                //                            Ar  Iz Ab De
+                uchanimal.Margin = new Padding(10, 10, 0, 0);
+                //Agregar el control (comentario)
+                flpGestor.Controls.Add(uchanimal);
+                GC.Collect();
+            }
         }
 
         private void btnAdjuntar_Click(object sender, EventArgs e)
@@ -75,7 +70,7 @@ namespace PetFy.Modulo_Historial_Clinico
         {
             try
             {
-                if (ruta != null)
+                if (ruta != null && txtNombre.Text != "")
                 {
                     byte[] file = null;
                     Stream myStream = ofd.OpenFile();
@@ -91,10 +86,11 @@ namespace PetFy.Modulo_Historial_Clinico
                         ht.nombreHistorial = txtNombre.Text;
                         db.historial.Add(ht);
                         db.SaveChanges();
-
                     }
                 }
+                else { MessageBox.Show("No has introducido ningun nombre o ningun archivo."); }
                 cargarHistoriales("SELECT *FROM historial");
+                txtNombre.Text = String.Empty;
             }
             catch (Exception ex)
             { Console.WriteLine(ex.Message); }
@@ -102,6 +98,7 @@ namespace PetFy.Modulo_Historial_Clinico
 
         private void cargarHistoriales(string query)
         {
+            flpHistoriales.Controls.Clear();
             //Obtenemos la tabla de los animales registrados
             DataTable dt = consulta.obtenerTabla(query);
             //Guardamos la cantidad de animales para poder imprimirlos
@@ -111,13 +108,26 @@ namespace PetFy.Modulo_Historial_Clinico
             {
                 //Declaramos la tarjeta del perro
                 //Asi no usamos uno solo para estar sobreescribiendo
-                historialClinico hc = new historialClinico();
+                ucHClinico hc = new ucHClinico();
                 hc.lblId.Text = dt.Rows[i]["idHistorial"].ToString();
                 hc.lblNombre.Text = dt.Rows[i]["nombreHistorial"].ToString();
                 //Agregar el control (comentario)
                 flpHistoriales.Controls.Add(hc);
                 GC.Collect();
             }
+        }
+
+        private void btnAsignar_Click(object sender, EventArgs e)
+        {
+            if(idAnimal != 0 && idHistorial != 0)
+            {
+                consulta.Consulta("UPDATE animales SET idHistorial = '" + idHistorial + "' WHERE idAnimal = '" + idAnimal + "'");
+            }
+        }
+        static public string nombrePDF = String.Empty;
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            nombrePDF = txtNombre.Text;
         }
     }
 }

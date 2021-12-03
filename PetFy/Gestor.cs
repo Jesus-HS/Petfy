@@ -2,6 +2,7 @@
 using PetFy.Modulo_Historial_Clinico;
 using PetFy.Modulo_Personal;
 using PetFy.Modulo_Usuarios;
+using PetFy.Modulo_Adopciones;
 using System;
 using System.Data;
 using System.Drawing;
@@ -12,15 +13,18 @@ namespace PetFy
 {
     public partial class frmGestor : Form
     {
+        static public string idUsuario = String.Empty;
         static public string idElemento = String.Empty;
+        static public string idElementoSecundario = String.Empty;
         Consultas consulta = new Consultas();
         DataTable dt;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
-        public frmGestor()
+        public frmGestor(string id)
         {
             InitializeComponent();
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            idUsuario = id;
         }
         private void frmGestor_Load(object sender, EventArgs e)
         {
@@ -75,7 +79,7 @@ namespace PetFy
         }
         private void btnPersonal_Click_1(object sender, EventArgs e)
         {
-            lblTitulo.Text = "Gestor de Personal";
+            lblTitulo.Text = "Gestor de Voluntarios";
 
             btnGestorAnimales.Image = Properties.Resources.huellaInactiva;
             btnGestorHistorialClinico.Image = Properties.Resources.historialInactivo;
@@ -136,29 +140,55 @@ namespace PetFy
             btnGestorAdopciones.ForeColor = Color.FromArgb(123, 44, 191);
             btnGestorUsuarios.ForeColor = Color.FromArgb(212, 212, 212);
             btnGestorDependencias.ForeColor = Color.FromArgb(212, 212, 212);
-
+            imprimirAdopciones("SELECT *from adopciones inner join animales ON animales.idAnimal = adopciones.idAnimal inner join adoptantes ON adoptantes.idAdoptante = adopciones.idAdoptante");
         }
         private void btnRegistrousuarios_Click(object sender, EventArgs e)
         {
-            lblTitulo.Text = "Gestor de Usuarios";
+            dt = consulta.obtenerTabla("select idUsuario, nombreUsuario, contraseñaUsuario, rangos.nombreRango from usuarios JOIN rangos ON rangos.idRango = usuarios.idRango WHERE idUsuario = '" + idUsuario + "';");
+            if (dt.Rows[0]["nombreRango"].ToString() == "Administrador")
+            {
+                lblTitulo.Text = "Gestor de Usuarios";
 
-            btnGestorAnimales.Image = Properties.Resources.huellaInactiva;
-            btnGestorHistorialClinico.Image = Properties.Resources.historialInactivo;
-            btnGestorPersonal.Image = Properties.Resources.personalInactivo;
-            btnGestorAlmacen.Image = Properties.Resources.almacenInactivo;
-            btnGestorAdopciones.Image = Properties.Resources.adopcionesInactivo;
-            btnGestorUsuarios.Image = Properties.Resources.usuarioActivo;
-            btnGestorDependencias.Image = Properties.Resources.dependenciaInactiva;
+                btnGestorAnimales.Image = Properties.Resources.huellaInactiva;
+                btnGestorHistorialClinico.Image = Properties.Resources.historialInactivo;
+                btnGestorPersonal.Image = Properties.Resources.personalInactivo;
+                btnGestorAlmacen.Image = Properties.Resources.almacenInactivo;
+                btnGestorAdopciones.Image = Properties.Resources.adopcionesInactivo;
+                btnGestorUsuarios.Image = Properties.Resources.usuarioActivo;
+                btnGestorDependencias.Image = Properties.Resources.dependenciaInactiva;
 
-            btnGestorAnimales.ForeColor = Color.FromArgb(212, 212, 212);
-            btnGestorHistorialClinico.ForeColor = Color.FromArgb(212, 212, 212);
-            btnGestorPersonal.ForeColor = Color.FromArgb(212, 212, 212);
-            btnGestorAlmacen.ForeColor = Color.FromArgb(212, 212, 212);
-            btnGestorAdopciones.ForeColor = Color.FromArgb(212, 212, 212);
-            btnGestorUsuarios.ForeColor = Color.FromArgb(123, 44, 191);
-            btnGestorDependencias.ForeColor = Color.FromArgb(212, 212, 212);
+                btnGestorAnimales.ForeColor = Color.FromArgb(212, 212, 212);
+                btnGestorHistorialClinico.ForeColor = Color.FromArgb(212, 212, 212);
+                btnGestorPersonal.ForeColor = Color.FromArgb(212, 212, 212);
+                btnGestorAlmacen.ForeColor = Color.FromArgb(212, 212, 212);
+                btnGestorAdopciones.ForeColor = Color.FromArgb(212, 212, 212);
+                btnGestorUsuarios.ForeColor = Color.FromArgb(123, 44, 191);
+                btnGestorDependencias.ForeColor = Color.FromArgb(212, 212, 212);
 
-            imprimirUsuarios("select idUsuario, nombreUsuario, contraseñaUsuario, rangos.nombreRango from usuarios JOIN rangos ON rangos.idRango = usuarios.idRango;");
+                imprimirUsuarios("select idUsuario, nombreUsuario, contraseñaUsuario, rangos.nombreRango from usuarios JOIN rangos ON rangos.idRango = usuarios.idRango;");
+            }
+            else
+            {
+                MessageBox.Show("Solo el administrador puede visualizar esta area.");
+            }
+        }
+        private void btnDonaciones_Click(object sender, EventArgs e)
+        {
+            frmDonaciones frmDonaciones = new frmDonaciones();
+            frmDonaciones.ShowDialog();
+        }
+        private void btnDependencias_Click(object sender, EventArgs e)
+        {
+            dt = consulta.obtenerTabla("select idUsuario, nombreUsuario, contraseñaUsuario, rangos.nombreRango from usuarios JOIN rangos ON rangos.idRango = usuarios.idRango WHERE idUsuario = '" + idUsuario + "';");
+            if(dt.Rows[0]["nombreRango"].ToString() == "Administrador")
+            {
+                frmDependencias frmDependencias = new frmDependencias();
+                frmDependencias.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Solo el administrador puede visualizar esta area.");
+            }
         }
 
         #endregion
@@ -178,7 +208,7 @@ namespace PetFy
                     frmahc.Show();
                     break;
 
-                case "Gestor de Personal":
+                case "Gestor de Voluntarios":
                     frmAgregarPersonal frmAgregarPersonal = new frmAgregarPersonal();
                     frmAgregarPersonal.ShowDialog();
                     break;
@@ -189,6 +219,8 @@ namespace PetFy
                     break;
 
                 case "Gestor de Adopciones":
+                    frmAgregarAdopcion frmagregaradopcion = new frmAgregarAdopcion();
+                    frmagregaradopcion.ShowDialog();
                     break;
 
                 case "Gestor de Usuarios":
@@ -219,11 +251,22 @@ namespace PetFy
                     break;
 
                 case "Gestor del Historial Clinico":
-                    frmAgregarHistorialClinico frmahc = new frmAgregarHistorialClinico();
-                    frmahc.Show();
+                    try
+                    {
+                        if (MessageBox.Show("¿Desea eliminar el elemento seleccionado?" + idElemento, "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes && idElemento != string.Empty)
+                        {
+                            consulta.Consulta("UPDATE animales SET idHistorial = NULL WHERE idAnimal = '" + idElemento + "'");
+                            imprimirAnimales("SELECT idAnimal, nombreAnimal, caracteristicas, generoAnimal, fechaAnimal, razas.nombreRaza, tipos.nombreTipo, historial.contenidoHistorial FROM animales JOIN Razas ON razas.idRaza = animales.idRaza JOIN tipos ON tipos.idTipo = animales.idTipo JOIN historial ON historial.idHistorial = animales.idHistorial");
+                            idElemento = string.Empty;
+                            MessageBox.Show("Se elimino");
+                        }
+                        else
+                            MessageBox.Show("Rechazo la pregunta o quizas no selecciono nada.", "No se elimino");
+                    }
+                    catch (Exception ex) { MessageBox.Show(ex.ToString(), "Mostrar mensaje al desarrollador"); }
                     break;
 
-                case "Gestor de Personal":
+                case "Gestor de Voluntarios":
                     try
                     {
                         if (MessageBox.Show("¿Desea eliminar el elemento seleccionado?" + idElemento, "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes && idElemento != string.Empty)
@@ -256,6 +299,20 @@ namespace PetFy
                     break;
 
                 case "Gestor de Adopciones":
+                    try
+                    {
+                        if (MessageBox.Show("¿Desea eliminar el elemento seleccionado?" + idElemento, "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes && idElemento != string.Empty)
+                        {
+                            consulta.Consulta("DELETE FROM adopciones WHERE idAdoptante='" + idElemento + "' AND idAnimal = '" + idElementoSecundario + "'");
+                            imprimirAdopciones("SELECT *from adopciones inner join animales ON animales.idAnimal = adopciones.idAnimal inner join adoptantes ON adoptantes.idAdoptante = adopciones.idAdoptante");
+                            idElemento = string.Empty;
+                            idElementoSecundario = string.Empty;
+                            MessageBox.Show("Se elimino");
+                        }
+                        else
+                            MessageBox.Show("Rechazo la pregunta o quizas no selecciono nada.", "No se elimino");
+                    }
+                    catch (Exception ex) { MessageBox.Show(ex.ToString(), "Mostrar mensaje al desarrollador"); }
                     break;
 
                 case "Gestor de Usuarios":
@@ -303,10 +360,11 @@ namespace PetFy
                         case "Gestor del Historial Clinico":
                             break;
 
-                        case "Gestor de Personal":
+                        case "Gestor de Voluntarios":
                             frmAgregarPersonal frmap = new frmAgregarPersonal();
                             frmap.btnAgregar.Text = "Modificar";
                             dt = consulta.obtenerTabla("SELECT *FROM personal WHERE idPersonal = '" + idElemento + "'");
+                            frmap.Name = idElemento;
                             frmap.txtNombre.Text = dt.Rows[0]["nombrePersonal"].ToString();
                             frmap.txtNumero.Text = dt.Rows[0]["numeroPersonal"].ToString();
                             frmap.txtDireccion.Text = dt.Rows[0]["direccionPersonal"].ToString();
@@ -317,17 +375,27 @@ namespace PetFy
                             frmAgregarProducto frmAgregarProducto = new frmAgregarProducto();
                             frmAgregarProducto.btnAgregar.Text = "Modificar";
                             dt = consulta.obtenerTabla("SELECT * FROM productos WHERE idProducto = '" + idElemento + "'");
+                            frmAgregarProducto.Name = dt.Rows[0]["idProducto"].ToString();
                             frmAgregarProducto.txtNombre.Text = dt.Rows[0]["nombreProducto"].ToString();
                             frmAgregarProducto.nudCantidad.Value = Convert.ToDecimal(dt.Rows[0]["cantidad"].ToString());
                             frmAgregarProducto.ShowDialog();
                             break;
 
                         case "Gestor de Adopciones":
+                            MessageBox.Show("Por favor de editarlo desde el boton de agregar");
                             break;
 
                         case "Gestor de Usuarios":
-                            frmAgregarusuario frmAgregarusuario = new frmAgregarusuario();
-                            frmAgregarusuario.ShowDialog();
+                            frmAgregarusuario frmagregarusuario = new frmAgregarusuario();
+                            dt = consulta.obtenerTabla("select idUsuario, nombreUsuario, contraseñaUsuario, rangos.nombreRango from usuarios JOIN rangos ON rangos.idRango = usuarios.idRango WHERE idUsuario = '" + idElemento + "';");
+                            frmagregarusuario.btnAgregar.Text = "Modificar";
+                            frmagregarusuario.Name = dt.Rows[0]["idUsuario"].ToString();
+                            frmagregarusuario.txtUsuario.Text = dt.Rows[0]["nombreUsuario"].ToString();
+                            frmagregarusuario.txtContraseña.Text = dt.Rows[0]["contraseñaUsuario"].ToString();
+                            frmagregarusuario.txtConfirmarContraseña.Text = dt.Rows[0]["contraseñaUsuario"].ToString();
+                            frmagregarusuario.cbRango.Text = dt.Rows[0]["nombreRango"].ToString();
+
+                            frmagregarusuario.ShowDialog();
                             break;
                     }
                 }
@@ -343,49 +411,56 @@ namespace PetFy
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            switch (lblTitulo.Text)
+            if(txtBuscar.Text != "")
             {
-                case "Gestor de Animales":
-                    if (txtBuscar.Text != "")
-                        imprimirAnimales("SELECT idAnimal, nombreAnimal, caracteristicas, generoAnimal, fechaAnimal, razas.nombreRaza, tipos.nombreTipo, fotoAnimal FROM animales JOIN Razas ON razas.idRaza = animales.idRaza JOIN tipos ON tipos.idTipo = animales.idTipo WHERE nombreAnimal='" + txtBuscar.Text + "'; ");
-                    else
-                        MessageBox.Show("Escriba el nombre que desea buscar");
-                    break;
+                switch (lblTitulo.Text)
+                {
+                    case "Gestor de Animales":
+                        if (txtBuscar.Text != "")
+                            imprimirAnimales("SELECT idAnimal, nombreAnimal, caracteristicas, generoAnimal, fechaAnimal, razas.nombreRaza, tipos.nombreTipo FROM animales JOIN Razas ON razas.idRaza = animales.idRaza JOIN tipos ON tipos.idTipo = animales.idTipo WHERE nombreAnimal='" + txtBuscar.Text + "'; ");
+                        else
+                            MessageBox.Show("Escriba el nombre que desea buscar");
+                        break;
 
-                case "Gestor del Historial Clinico":
-                    if (txtBuscar.Text != "")
-                        imprimirAnimales("SELECT idAnimal, nombreAnimal, caracteristicas, generoAnimal, fechaAnimal, razas.nombreRaza, tipos.nombreTipo, fotoAnimal, historial.contenidoHistorial FROM animales JOIN Razas ON razas.idRaza = animales.idRaza JOIN tipos ON tipos.idTipo = animales.idTipo JOIN historial ON historial.idHistorial = animales.idHistorial");
-                    else
-                        MessageBox.Show("Escriba el nombre que desea buscar");
-                    break;
+                    case "Gestor del Historial Clinico":
+                        if (txtBuscar.Text != "")
+                            imprimirAnimales("SELECT idAnimal, nombreAnimal, caracteristicas, generoAnimal, fechaAnimal, razas.nombreRaza, tipos.nombreTipo, historial.contenidoHistorial FROM animales JOIN Razas ON razas.idRaza = animales.idRaza JOIN tipos ON tipos.idTipo = animales.idTipo JOIN historial ON historial.idHistorial = animales.idHistorial WHERE nombreAnimal='" + txtBuscar.Text + "'");
+                        else
+                            MessageBox.Show("Escriba el nombre que desea buscar");
+                        break;
 
-                case "Gestor de Personal":
-                    if (txtBuscar.Text != "")
-                        imprimirPersonal("SELECT *FROM personal WHERE nombrePersonal = '"+txtBuscar.Text+"'; ");
-                    else
-                        MessageBox.Show("Escriba el nombre que desea buscar");
-                    break;
+                    case "Gestor de Voluntarios":
+                        if (txtBuscar.Text != "")
+                            imprimirPersonal("SELECT *FROM personal WHERE nombrePersonal = '" + txtBuscar.Text + "'; ");
+                        else
+                            MessageBox.Show("Escriba el nombre que desea buscar");
+                        break;
 
-                case "Gestor de Almacen":
-                    if (txtBuscar.Text != "")
-                        imprimirAlmacen("select * from productos WHERE nombreProducto = '" + txtBuscar.Text + "'; ");
-                    else
-                                MessageBox.Show("Escriba el nombre que desea buscar");
-                    break;
+                    case "Gestor de Almacen":
+                        if (txtBuscar.Text != "")
+                            imprimirAlmacen("select * from productos WHERE nombreProducto = '" + txtBuscar.Text + "'; ");
+                        else
+                            MessageBox.Show("Escriba el nombre que desea buscar");
+                        break;
 
-                case "Gestor de Adopciones":
-                    if (txtBuscar.Text != "")
-                        MessageBox.Show("");
-                    else
-                        MessageBox.Show("Escriba el nombre que desea buscar");
-                    break;
+                    case "Gestor de Adopciones":
+                        if (txtBuscar.Text != "")
+                            MessageBox.Show("");
+                        else
+                            MessageBox.Show("Escriba el nombre que desea buscar");
+                        break;
 
-                case "Gestor de Usuarios":
-                    if (txtBuscar.Text != "")
-                        imprimirUsuarios("select idUsuario, nombreUsuario, contraseñaUsuario, rangos.nombreRango from usuarios JOIN rangos ON rangos.idRango = usuarios.idRango WHERE nombreUsuario = '" + txtBuscar.Text + "';");
-                    else
-                        MessageBox.Show("Escriba el nombre que desea buscar");
-                    break;
+                    case "Gestor de Usuarios":
+                        if (txtBuscar.Text != "")
+                            imprimirUsuarios("select idUsuario, nombreUsuario, contraseñaUsuario, rangos.nombreRango from usuarios JOIN rangos ON rangos.idRango = usuarios.idRango WHERE nombreUsuario = '" + txtBuscar.Text + "';");
+                        else
+                            MessageBox.Show("Escriba el nombre que desea buscar");
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("No ha introducido ningun nombre");
             }
         }
         #endregion
@@ -491,25 +566,42 @@ namespace PetFy
                 ucusuario.lblNombre.Text = dt.Rows[i]["nombreUsuario"].ToString();
                 ucusuario.lblContraseña.Text = dt.Rows[i]["contraseñaUsuario"].ToString();
                 ucusuario.lblRango.Text = dt.Rows[i]["nombreRango"].ToString();
-
+                ucusuario.Margin = new Padding(5, 5, 5, 10);
                 //Agregar el control (comentario)
                 flpGestor.Controls.Add(ucusuario);
             }
         }
-        private void btnDonaciones_Click(object sender, EventArgs e)
+        private void imprimirAdopciones(string query)
         {
-            frmDonaciones frmDonaciones = new frmDonaciones();
-            frmDonaciones.ShowDialog();
-        }
-        private void btnDependencias_Click(object sender, EventArgs e)
-        {
-            frmDependencias frmDependencias = new frmDependencias();
-            frmDependencias.ShowDialog();
+            flpGestor.Controls.Clear();
+            //Obtenemos la tabla de los animales registrados
+            DataTable dt = consulta.obtenerTabla(query);
+            //Guardamos la cantidad de animales para poder imprimirlos
+            int contador = dt.Rows.Count;
+            //Imprimimos todos los animales
+            for (int i = 0; i < contador; i++)
+            {
+                ucAdopciones ucAdopciones = new ucAdopciones();
+                ucAdopciones.lblAdoptado.Text = dt.Rows[i]["nombreAnimal"].ToString();
+                ucAdopciones.lblIdAdoptado.Text = dt.Rows[i]["idAnimal"].ToString();
+                ucAdopciones.lblAdoptante.Text = dt.Rows[i]["nombreAdoptante"].ToString();
+                ucAdopciones.lblIdAdoptante.Text = dt.Rows[i]["idAdoptante"].ToString();
+
+                //Asignamos un margen al control de usuario para estetica
+                //                            Ar  Iz Ab De
+                ucAdopciones.Margin = new Padding(10, 10, 0, 0);
+                //Asignamos la fotografia
+                //uspersonal.pbPersonal.Image = Image.FromStream(ms);
+
+                //Agregar el control (comentario)
+                flpGestor.Controls.Add(ucAdopciones);
+            }
         }
 
         private void lblCerrar_Click(object sender, EventArgs e)
         {
             Close();
         }
+
     }
 }

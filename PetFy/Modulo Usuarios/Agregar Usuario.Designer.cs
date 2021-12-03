@@ -29,6 +29,7 @@ namespace PetFy
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgregarusuario));
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -42,12 +43,14 @@ namespace PetFy
             // 
             // btnAgregar
             // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(78)))), ((int)(((byte)(221)))));
+            this.btnAgregar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAgregar.Location = new System.Drawing.Point(88, 144);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(117, 31);
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtUsuario
@@ -119,6 +122,7 @@ namespace PetFy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(292, 200);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbRango);
@@ -129,8 +133,11 @@ namespace PetFy
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.btnAgregar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAgregarusuario";
-            this.Text = "Agregar_Usuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Agregar Usuario";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,14 +145,14 @@ namespace PetFy
 
         #endregion
 
-        private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.TextBox txtUsuario;
+        public System.Windows.Forms.Button btnAgregar;
+        public System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox txtContraseña;
-        private System.Windows.Forms.TextBox txtConfirmarContraseña;
+        public System.Windows.Forms.TextBox txtContraseña;
+        public System.Windows.Forms.TextBox txtConfirmarContraseña;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbRango;
+        public System.Windows.Forms.ComboBox cbRango;
         private System.Windows.Forms.Label label3;
     }
 }

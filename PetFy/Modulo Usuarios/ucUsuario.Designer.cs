@@ -77,7 +77,7 @@ namespace PetFy.Modulo_Usuarios
             this.Controls.Add(this.lblNombre);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "ucUsuario";
-            this.Size = new System.Drawing.Size(193, 179);
+            this.Size = new System.Drawing.Size(175, 122);
             this.Click += new System.EventHandler(this.ucUsuario_Click);
             this.ResumeLayout(false);
             this.PerformLayout();

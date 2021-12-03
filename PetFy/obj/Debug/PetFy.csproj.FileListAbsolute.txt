@@ -123,7 +123,13 @@ C:\Users\LasAv\Documents\GitHub\Petfy\PetFy\obj\Debug\PetFy.exe
 C:\Users\LasAv\Documents\GitHub\Petfy\PetFy\obj\Debug\PetFy.pdb
 C:\Users\LasAv\Documents\GitHub\Petfy\PetFy\obj\Debug\PetFy.Confirmacion.resources
 C:\Users\LasAv\Documents\GitHub\Petfy\PetFy\obj\Debug\PetFy.Modulo_Almacen.frmDonaciones.resources
-C:\Users\LasAv\Documents\GitHub\Petfy\PetFy\obj\Debug\PetFy.Modulo_Historial_Clinico.historialClinico.resources
 C:\Users\LasAv\Documents\GitHub\Petfy\PetFy\obj\Debug\PetFy.frmDependencias.resources
 C:\Users\LasAv\Documents\GitHub\Petfy\PetFy\bin\Debug\EntityFramework.dll
 C:\Users\LasAv\Documents\GitHub\Petfy\PetFy\bin\Debug\EntityFramework.xml
+C:\Users\LasAv\Documents\GitHub\Petfy\PetFy\obj\Debug\PetFy.Modulo_Historial_Clinico.ucHAnimal.resources
+C:\Users\LasAv\Documents\GitHub\Petfy\PetFy\obj\Debug\PetFy.Modulo_Historial_Clinico.ucHClinico.resources
+C:\Users\LasAv\Documents\GitHub\Petfy\PetFy\obj\Debug\PetFy.Modulo_Adopciones.ucAdopciones.resources
+C:\Users\LasAv\Documents\GitHub\Petfy\PetFy\obj\Debug\PetFy.Modulo_Adopciones.ucAdoptante.resources
+C:\Users\LasAv\Documents\GitHub\Petfy\PetFy\obj\Debug\PetFy.Modulo_Adopciones.frmAgregarAdopcion.resources
+C:\Users\LasAv\Documents\GitHub\Petfy\PetFy\obj\Debug\PetFy.Modulo_Adopciones.ucAdoptado.resources
+C:\Users\LasAv\Documents\GitHub\Petfy\PetFy\obj\Debug\PetFy.Modulo_Adopciones.frmAgregarAdoptante.resources

@@ -20,7 +20,7 @@ namespace PetFy
             }
             else
             {
-                consulta.Consulta("UPDATE personal SET nombrePersonal = '"+txtNombre.Text+"', direccionPersonal = '"+txtDireccion.Text+"', numeroPersonal = '"+txtNumero.Text+"';");
+                consulta.Consulta("UPDATE personal SET nombrePersonal = '" + txtNombre.Text + "', direccionPersonal = '" + txtDireccion.Text + "', numeroPersonal = '" + txtNumero.Text + "' WHERE idPersonal = '" + Name + "';");
             }
             this.Close();
         }
